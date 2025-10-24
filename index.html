@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Universal Ink Centre for Learning</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet" />
@@ -11,23 +11,34 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <style>
+    /* Base Styles */
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', Arial, sans-serif;
       color: #3e3e3e;
       background: #fafafa;
       margin: 0;
+      font-size: 16px;
     }
     h1, h2, h3, h4 {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', Georgia, serif;
       font-weight: 700;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
     nav {
       background-color: #26418f; /* Deep blue */
+    }
+    .nav-wrapper .brand-logo {
+      font-size: 1.5rem;
+      white-space: nowrap;
     }
     .btn-primary {
       background-color: #f2994a; /* Warm orange */
       font-weight: 600;
       text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      cursor: pointer;
     }
     .section {
       padding: 60px 0;
@@ -46,7 +57,68 @@
       padding: 15px 0;
       text-align: center;
     }
+    /* Responsive font sizes */
+    @media only screen and (max-width: 320px) {
+      body {
+        font-size: 14px;
+      }
+      .nav-wrapper .brand-logo {
+        font-size: 1.2rem;
+      }
+      nav ul {
+        display: block !important;
+        padding-left: 10px;
+      }
+      nav li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+    @media only screen and (min-width: 321px) and (max-width: 480px) {
+      body {
+        font-size: 15px;
+      }
+      .nav-wrapper .brand-logo {
+        font-size: 1.3rem;
+      }
+    }
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+      .nav-wrapper .brand-logo {
+        font-size: 1.4rem;
+      }
+    }
+    @media only screen and (min-width: 769px) {
+      body {
+        font-size: 16px;
+      }
+      .nav-wrapper .brand-logo {
+        font-size: 1.5rem;
+      }
+    }
+    /* Touch device specific styles */
+    body.touch-device .btn-primary {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+    }
+    /* Non-touch device styles */
+    body.no-touch-device .btn-primary {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Feature detection for touch screens
+      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        document.body.classList.add('touch-device');
+      } else {
+        document.body.classList.add('no-touch-device');
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -97,7 +169,7 @@
           <div class="card-content center-align">
             <i class="material-icons large" style="color:#f2994a;">language</i>
             <h4>Language Test Prep</h4>
-            <p>IELTS, TOEFL, DELE, SIELE, PTE test preparation with focus on speaking, writing, and cultural nuances.</p>
+            <p>IELTS, TOEFL, DELE, SIELE test preparation with focus on speaking, writing, and cultural nuances.</p>
           </div>
         </div>
       </div>
@@ -119,8 +191,8 @@
   <section id="contact" class="section center-align" style="background:#f2994a; color:#fff;">
     <div class="container">
       <h2>Contact Us</h2>
-      <p>Email: contact@fluentarc.com</p>
-      <a href="mailto:contact@fluentarc.com" class="btn btn-primary waves-effect waves-light">Get In Touch</a>
+      <p>Email:</p>
+      <a href="#" class="btn btn-primary waves-effect waves-light">Get In Touch</a>
     </div>
   </section>
 
